@@ -8,16 +8,7 @@
 #
 #         return False
 
-class Solution:
-    def containsDuplicate(self, nums: list[int]) -> bool:
-        collect = set()
-
-        for num in nums:
-            if num in collect:
-                return True
-            collect.add(num)
-        return False
-
+#sorting before iterating
 # class Solution:
 #     def containsDuplicate(self, nums: list[int]) -> bool:
 #         nums.sort()
@@ -27,8 +18,16 @@ class Solution:
 #                 return True
 #         return False
 
+# this is using set
+class Solution:
+    def containsDuplicate(self, nums: list[int]) -> bool:
+        collect = set()
 
-
+        for num in nums:
+            if num in collect:
+                return True
+            collect.add(num)
+        return False
 
 if __name__ == "__main__":
     solution = Solution()
